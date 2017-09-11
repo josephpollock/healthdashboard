@@ -1,9 +1,12 @@
+<div class="cases-wrapper">
 
 <h2>Cases</h2>
+
 <h3 data-toggle="collapse" href="#collapsable" aria-expanded="true" aria-controls="collapsable">
     Completed Cases over the past 7 days
-</h3> 
+</h3>
 
 <div class="panel-collapse show" id="collapsable">
     <app-caseblock *ngFor="let case of cases" [title]="case.title" [number]="case.number"></app-caseblock>
+</div>
 </div>

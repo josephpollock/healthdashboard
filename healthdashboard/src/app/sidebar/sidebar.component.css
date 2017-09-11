@@ -1,0 +1,10 @@
+
+.sidebar {
+  height: 100%;
+  width: 60px;
+  background-color: purple;
+  display: block;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
