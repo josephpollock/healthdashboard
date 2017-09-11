@@ -1,0 +1,32 @@
+
+.caseblock  {
+  width: 200px;
+  height: 125px;
+  margin: 20px;
+  display: inline-block;
+}
+
+.caseblock-left, .caseblock-right {
+  height: 100%;
+  float: left;
+  display: table;
+  padding-left: 10px;
+}
+
+.caseblock-left span, .caseblock-right span {
+  vertical-align: middle;
+  display: table-cell;
+  color: white;
+}
+
+.caseblock-left {
+  width: 75%;
+  background: purple;
+  font-size: 20px;
+}
+
+.caseblock-right {
+  font-size: 30px;
+  width: 25%;
+  background: lightblue;
+}

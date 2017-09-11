@@ -1,8 +1,4 @@
-nav {
-  width: calc(100% - 60px);
-  position: absolute;
-  right: 0px;
-}
+
 
 .fa-stack[data-count]:after{
   position:absolute;

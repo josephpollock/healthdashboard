@@ -1,0 +1,5 @@
+.main-container {
+    width: calc(100% - 60px);
+    position: absolute;
+    right: 0px;
+}
