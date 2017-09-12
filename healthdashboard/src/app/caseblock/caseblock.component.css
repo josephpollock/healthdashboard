@@ -4,7 +4,10 @@
   height: 125px;
   margin: 20px;
   display: inline-block;
+  text-align: center;
 }
+
+
 
 .caseblock-left, .caseblock-right {
   height: 100%;
@@ -17,6 +20,7 @@
   vertical-align: middle;
   display: table-cell;
   color: white;
+  text-align: left;
 }
 
 .caseblock-left {

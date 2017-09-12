@@ -8,12 +8,19 @@ import { CaseService } from '../case/case.service';
   providers:[CaseService]
 })
 export class CaseListComponent implements OnInit {
-  public caseList:any;
+  private caseList:any;
+  private filterParam:any;
+  private pageNum: number = 1;
+
 
   constructor(private caseService: CaseService) { }
 
   ngOnInit() {
     this.caseList = this.caseService.getCaseList();
+  }
+
+  filterOnServiceTypes() {
+    this.filterParam = "CoPay";
   }
 
 }

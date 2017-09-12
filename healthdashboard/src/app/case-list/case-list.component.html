@@ -5,15 +5,19 @@
 </h3>
 
 <div class="panel-collapse show" id="case-list-collapsable">
-
-        <div *ngFor="let case of caseList | async" class="caseDiv">
+        <div *ngFor="let case of caseList | async | paginate: { itemsPerPage: 15, currentPage: pageNum }" class="caseDiv">
           <span *ngIf="case.statusKey == 'ActionNeeded'" class="text">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x text-danger"></i>
               <i class="fa fa-caret-up fa-stack-1x fa-inverse"></i>
             </span>
           </span>
-          <span *ngIf="case.statusKey == 'InProgress'" class="text"><i class="fa fa-circle fa-2x text-primary"></i></span>
+          <span *ngIf="case.statusKey == 'InProgress'" class="text">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-2x text-primary"></i>
+              <!-- <i class="fa fa-caret-right fa-stack-1x fa-inverse"></i> -->
+          </span>
+          </span>
           <span *ngIf="case.statusKey == 'Completed'" class="text">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x text-success"></i>
@@ -34,6 +38,8 @@
           <span class="text badge badge-primary" *ngIf="case.service == 'CoPay'">CoPay</span>
           <span class="text badge badge-warning" *ngIf="case.service == 'PA'">Payment Authorization</span>
         </div>
+        <pagination-controls (pageChange)="pageNum = $event" class="pagination"></pagination-controls>
+
 
 </div>
 

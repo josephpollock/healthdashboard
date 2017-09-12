@@ -9,6 +9,8 @@ import { CasesComponent } from './cases/cases.component';
 import { CaseblockComponent } from './caseblock/caseblock.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CaseListComponent } from './case-list/case-list.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { CaseListComponent } from './case-list/case-list.component';
     CaseListComponent
   ],
   imports: [
-    BrowserModule, HttpModule
+    BrowserModule, HttpModule, NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
