@@ -5,7 +5,7 @@
 </h3>
 
 <div class="panel-collapse show" id="case-list-collapsable">
-    <p>hello!</p>
+    <p *ngFor="let case of caseList | async">Hello {{ case.statusKey }}</p>
 </div>
 
 </div>

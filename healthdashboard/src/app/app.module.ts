@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -18,7 +20,7 @@ import { CaseListComponent } from './case-list/case-list.component';
     CaseListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
