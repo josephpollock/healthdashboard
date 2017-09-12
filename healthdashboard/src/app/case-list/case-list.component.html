@@ -7,12 +7,16 @@
 <div class="panel-collapse show" id="case-list-collapsable">
 
         <div *ngFor="let case of caseList | async" class="caseDiv">
-          <span>{{case.dob}}</span>
-          <span>{{case.name}}</span>
-          <span>{{case.patientID}}</span>
-          <span>{{case.service}}</span>
-          <span>{{case.serviceID}}</span>
           <span>{{case.statusKey}}</span>
+          <span><a href="#">{{case.name}}</a></span>
+          <span>Patient ID: {{case.patientID}}</span>
+          <span>Date of Birth: {{case.dob}}</span>
+
+          <span>Service ID: {{case.serviceID}}</span>
+
+          <span class="badge badge-success" *ngIf="case.service == 'BV'">Benefits Verification</span>
+          <span class="badge badge-primary" *ngIf="case.service == 'CoPay'">CoPay</span>
+          <span class="badge badge-warning" *ngIf="case.service == 'PA'">Payment Authorization</span>
         </div>
 
 </div>
