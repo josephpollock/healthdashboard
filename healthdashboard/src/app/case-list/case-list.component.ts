@@ -11,8 +11,7 @@ export class CaseListComponent implements OnInit {
   private caseList:any;
   private filterParam:any;
   private pageNum: number = 1;
-
-
+  private selectedStatus:string;
   constructor(private caseService: CaseService) { }
 
   ngOnInit() {
@@ -21,6 +20,11 @@ export class CaseListComponent implements OnInit {
 
   filterOnServiceTypes() {
     this.filterParam = "CoPay";
+  }
+
+  filterStatus(val) {
+    console.log(val);
+    this.selectedStatus = val;
   }
 
 }

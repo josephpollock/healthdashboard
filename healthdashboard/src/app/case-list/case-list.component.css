@@ -16,6 +16,18 @@
   text-align: center;
 }
 
-.panel-collapse {
+.filtersWrapper {
   text-align: center;
+}
+
+
+.statusFilter, .serviceTypesFilter {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+}
+
+.statusFilter {
+
 }

@@ -5,7 +5,50 @@
 </h3>
 
 <div class="panel-collapse show" id="case-list-collapsable">
-        <div *ngFor="let case of caseList | async | paginate: { itemsPerPage: 15, currentPage: pageNum }" class="caseDiv">
+
+<!--  FILTERS -->
+<div class="filtersWrapper">
+<div class="serviceTypesFilter">
+  <span><strong>Service Types:</strong></span>
+</div>
+
+<div class="statusFilter">
+  <span><strong>Status Key</strong></span>
+  <span class="text">
+    <span (click)="filterStatus('ActionNeeded')">
+
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x text-danger"></i>
+      <i class="fa fa-caret-up fa-stack-1x fa-inverse"></i>
+    </span>
+    Action Needed
+  </span>
+  </span>
+  <span  class="text">
+    <span (click)="filterStatus('InProgress')">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-2x text-primary"></i>
+  </span>
+  In Progress
+</span>
+  </span>
+  <span class="text">
+    <span (click)="filterStatus('Completed')">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x text-success"></i>
+      <i class="fa fa-caret-right fa-stack-1x fa-inverse"></i>
+    </span>
+    Completed
+  </span>
+  </span>
+</div>
+
+
+</div>
+
+  <!--  CASE LIST -->
+
+        <div *ngFor="let case of caseList | async | filter : 'statusKey' : this.selectedStatus | paginate: { itemsPerPage: 15, currentPage: pageNum }" class="caseDiv">
           <span *ngIf="case.statusKey == 'ActionNeeded'" class="text">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x text-danger"></i>
@@ -24,10 +67,6 @@
               <i class="fa fa-caret-right fa-stack-1x fa-inverse"></i>
             </span>
             </span>
-
-
-
-
           <span class="text"><a href="#">{{case.name}}</a></span>
           <span class="text">Patient ID: {{case.patientID}}</span>
           <span class="text">Date of Birth: {{case.dob}}</span>
@@ -38,9 +77,6 @@
           <span class="text badge badge-primary" *ngIf="case.service == 'CoPay'">CoPay</span>
           <span class="text badge badge-warning" *ngIf="case.service == 'PA'">Payment Authorization</span>
         </div>
-        <pagination-controls (pageChange)="pageNum = $event" class="pagination"></pagination-controls>
-
-
+          <pagination-controls (pageChange)="pageNum = $event" ></pagination-controls>
 </div>
-
 </div>

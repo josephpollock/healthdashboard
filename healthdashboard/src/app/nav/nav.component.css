@@ -13,5 +13,12 @@
   text-align:center;
   min-width:2em;
   font-weight:bold;
+}
+
+.nav-badge-red.fa-stack[data-count]:after {
   background:rgba(255,0,0,.85);
+}
+
+.nav-badge-purple.fa-stack[data-count]:after {
+  background:rgba(255,0,255,0.85);
 }

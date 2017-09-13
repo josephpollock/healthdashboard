@@ -10,6 +10,7 @@ import { CaseblockComponent } from './caseblock/caseblock.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CaseListComponent } from './case-list/case-list.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     CasesComponent,
     CaseblockComponent,
     SidebarComponent,
-    CaseListComponent
+    CaseListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule, HttpModule, NgxPaginationModule
