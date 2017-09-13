@@ -10,6 +10,12 @@
 <div class="filtersWrapper">
 <div class="serviceTypesFilter">
   <span><strong>Service Types:</strong></span>
+  <span (click)="filterService('PA')">
+    <i class="fa fa-square text-warning" aria-hidden="true"></i> PA
+  </span>
+  <span (click)="filterService('CoPay')">     <i class="fa fa-square text-primary" aria-hidden="true"></i> CoPay</span>
+  <span (click)="filterService('BV')">    <i class="fa fa-square text-success" aria-hidden="true"></i> BV</span>
+
 </div>
 
 <div class="statusFilter">
@@ -48,7 +54,7 @@
 
   <!--  CASE LIST -->
 
-        <div *ngFor="let case of caseList | async | filter : 'statusKey' : this.selectedStatus | paginate: { itemsPerPage: 15, currentPage: pageNum }" class="caseDiv">
+        <div *ngFor="let case of caseList | async |  filter : 'service' : this.selectedService | filter : 'statusKey' : this.selectedStatus | paginate: { itemsPerPage: 15, currentPage: pageNum }" class="caseDiv">
           <span *ngIf="case.statusKey == 'ActionNeeded'" class="text">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x text-danger"></i>

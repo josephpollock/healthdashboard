@@ -28,6 +28,6 @@
   padding: 5px;
 }
 
-.statusFilter {
-
+.serviceTypesFilter span i {
+  display: inline;
 }
