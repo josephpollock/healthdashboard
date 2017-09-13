@@ -23,11 +23,9 @@
 
 .statusFilter, .serviceTypesFilter {
   border: 1px solid black;
-  display: inline-block;
-  margin: 10px;
+  display: block;
+  width: 50%;
+  margin: 10px auto;
+  
   padding: 5px;
-}
-
-.serviceTypesFilter span i {
-  display: inline;
 }
