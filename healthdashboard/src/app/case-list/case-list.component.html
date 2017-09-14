@@ -10,11 +10,23 @@
 <div class="filtersWrapper">
 <div class="serviceTypesFilter">
   <span><strong>Service Types:</strong></span>
-  <span (click)="filterService('PA')">
-    <i class="fa fa-square text-warning fa-2x" aria-hidden="true"></i> PA
+
+  <span (click)="filterService('BV')">
+    <i class="fa fa-square text-success fa-2x" aria-hidden="true"></i> Benefits Verification
   </span>
-  <span (click)="filterService('CoPay')">     <i class="fa fa-square text-primary fa-2x" aria-hidden="true"></i> CoPay</span>
-  <span (click)="filterService('BV')">    <i class="fa fa-square text-success fa-2x" aria-hidden="true"></i> BV</span>
+  <span (click)="filterService('PA')">
+    <i class="fa fa-square text-warning fa-2x" aria-hidden="true"></i> Prior Authorization
+  </span>
+  <span (click)="filterService('CoPay')">
+    <i class="fa fa-square text-primary fa-2x" aria-hidden="true"></i> CoPay
+  </span>
+  <span (click)="filterService('PAP')">
+    <i class="fa fa-square text-info fa-2x" aria-hidden="true"></i> PAP
+  </span>
+  <span (click)="filterService('PR')">
+    <i class="fa fa-square text-dark-purple fa-2x" aria-hidden="true"></i> Prescription Referral
+  </span>
+
 
 </div>
 
@@ -83,6 +95,6 @@
           <span class="text badge badge-primary" *ngIf="case.service == 'CoPay'">CoPay</span>
           <span class="text badge badge-warning" *ngIf="case.service == 'PA'">Payment Authorization</span>
         </div>
-          <pagination-controls (pageChange)="pageNum = $event" ></pagination-controls>
+          <pagination-controls (pageChange)="pageNum = $event" class="pagination"></pagination-controls>
 </div>
 </div>
